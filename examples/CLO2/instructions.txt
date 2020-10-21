@@ -1,0 +1,21 @@
+These are three example calculations for a 3-atom molecule, ClO2.
+
+We use a 6th-order potential energy surface from K.A. Peterson (10.1063/1.477558) 
+which was converted to a 6th-order normal mode expansion by the PyPES software 
+(10.1002/jcc.24192). 
+
+The all input files are set to calculate the 20 lowest eigenstates of ClO2.  VCI 
+generates a CI basis of product states up to 25 quanta per state.  VHCI
+initializes the calculation with up to 8 quanta per product state and performs an
+iterative heat-bath calculation with variational cutoff parameter eps1=0.01 cm^-1.  
+VHCI+PT2 initializes in the same way, but only uses eps1=0.1 cm^-1, and then 
+performs a full PT2 correction.
+
+Once the code is compiled, it can be run with the following command:
+dir/vhci -n Ncpu -i CLO2.inp -o freqs.dat
+
+where dir is the directory containing the vhci executable and Ncpu is the number of 
+CPU cores you want to use.
+
+Each example directory contains the expected frequency results file (freqs.dat) 
+and the expected output to the terminal (output.log).

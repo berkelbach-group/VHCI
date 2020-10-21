@@ -1,0 +1,21 @@
+These are three example calculations for a 6-atom molecule, acetonitrile (CH3CN).
+
+We use a quartic potential energy surface from Begue et al. (10.1063/1.2795711). 
+
+The all input files are set to calculate the 20 lowest eigenstates of acetonitrile.  
+VCI generates a CI basis of product states up to 6 quanta per state.  VHCI
+initializes the calculation with up to 2 quanta per product state and performs an
+iterative heat-bath calculation with variational cutoff parameter eps1=1 cm^-1.  
+VHCI+PT2 initializes in the same way with eps1=1 cm^-1, and then performs a full 
+PT2 correction.
+
+Once the code is compiled, it can be run with the following command:
+dir/vhci -n Ncpu -i acetonitrile.inp -o freqs.dat
+
+where dir is the directory containing the vhci executable.
+
+Each example directory contains the expected frequency results file (freqs.dat) 
+and the expected output to the terminal (output.log).
+
+The results of VHCI and VHCI+PT2 should match those in Table I of Fetherolf
+& Berkelbach.

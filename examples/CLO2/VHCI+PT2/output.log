@@ -1,0 +1,65 @@
+
+#############################################################################
+#                                                                           #
+#              Vibrational Heat-Bath Configuration Interaction              #
+#                         By: Jonathan H. Fetherolf                         #
+#                                                                           #
+#                      Based on LOVCI by Eric G. Kratz                      #
+#                                                                           #
+#############################################################################
+
+Last modification: 22:38:05 on Oct 20 2020
+
+Reading input...
+
+No fatal errors detected.
+ And there was much rejoicing. Yay...
+
+No checkpoint filename specified. Checkpoints will not be saved.
+
+General settings:
+  CPU threads: 8
+
+  Normal modes: 3
+  Max quanta per state: 8
+  Basis functions: 165
+  Force constants: 43
+
+  Using HCI with energy cutoff: 0.100
+  Optimizing the first 20 eigenstates.
+
+Beginning Heat Bath CI procedure...
+ Initial basis size is: 165
+ Constructing Hamiltonian... Diagonalizing...
+ ZPE is: 1264.49
+
+ Performing HCI iteration: 1
+ Basis size after iteration 1 is: 318
+ Constructing Hamiltonian...The Hamiltonian is 57.53% sparse.
+ Finding the first 20 eigenstates...
+ ZPE is: 1264.49
+
+ Performing HCI iteration: 2
+ Basis size after iteration 2 is: 390
+ Constructing Hamiltonian...The Hamiltonian is 62.52% sparse.
+ Finding the first 20 eigenstates...
+ ZPE is: 1264.49
+
+ Performing HCI iteration: 3
+ Basis converged after 2 iterations and contains 390 product states.
+ Variational stage took 0.00 seconds
+
+Performing Epstein-Nesbet perturbation theory...
+ Including all connected states in PT2 calculation.
+ Finding connected states...
+ Perturbative space contains 962 states.
+ Calculating the 2nd-order perturbative correction for on first 20 eigenvalues.
+ New ZPE after PT2 correction is: 1264.49
+Printing the results...
+
+Results:
+  Zero-point energy: 1264.49 (1/cm)
+  Run time: 0.00 seconds
+
+Done.
+

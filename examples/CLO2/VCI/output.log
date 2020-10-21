@@ -1,0 +1,41 @@
+
+#############################################################################
+#                                                                           #
+#              Vibrational Heat-Bath Configuration Interaction              #
+#                         By: Jonathan H. Fetherolf                         #
+#                                                                           #
+#                      Based on LOVCI by Eric G. Kratz                      #
+#                                                                           #
+#############################################################################
+
+Last modification: 22:38:05 on Oct 20 2020
+
+Reading input...
+
+No fatal errors detected.
+ And there was much rejoicing. Yay...
+
+No checkpoint filename specified. Checkpoints will not be saved.
+
+General settings:
+  CPU threads: 8
+
+  Normal modes: 3
+  Max quanta per state: 25
+  Basis functions: 3276
+  Force constants: 43
+
+
+Constructing the Vibrational CI Hamiltonian...The Hamiltonian is 92.75% sparse.
+done.
+
+Solving for the lowest 20 eigenstates...
+
+Printing the results...
+
+Results:
+  Zero-point energy: 1264.49 (1/cm)
+  Run time: 2.00 seconds
+
+Done.
+

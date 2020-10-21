@@ -1,0 +1,63 @@
+
+#############################################################################
+#                                                                           #
+#              Vibrational Heat-Bath Configuration Interaction              #
+#                         By: Jonathan H. Fetherolf                         #
+#                                                                           #
+#                      Based on LOVCI by Eric G. Kratz                      #
+#                                                                           #
+#############################################################################
+
+Last modification: 22:38:05 on Oct 20 2020
+
+Reading input...
+
+No fatal errors detected.
+ And there was much rejoicing. Yay...
+
+No checkpoint filename specified. Checkpoints will not be saved.
+
+General settings:
+  CPU threads: 8
+
+  Normal modes: 3
+  Max quanta per state: 8
+  Basis functions: 165
+  Force constants: 43
+
+  Using HCI with energy cutoff: 0.010
+  Optimizing the first 20 eigenstates.
+
+Beginning Heat Bath CI procedure...
+ Initial basis size is: 165
+ Constructing Hamiltonian... Diagonalizing...
+ ZPE is: 1264.49
+
+ Performing HCI iteration: 1
+ Basis size after iteration 1 is: 397
+ Constructing Hamiltonian...The Hamiltonian is 63.05% sparse.
+ Finding the first 20 eigenstates...
+ ZPE is: 1264.49
+
+ Performing HCI iteration: 2
+ Basis size after iteration 2 is: 626
+ Constructing Hamiltonian...The Hamiltonian is 72.20% sparse.
+ Finding the first 20 eigenstates...
+ ZPE is: 1264.49
+
+ Performing HCI iteration: 3
+ Basis size after iteration 3 is: 669
+ Constructing Hamiltonian...The Hamiltonian is 73.97% sparse.
+ Finding the first 20 eigenstates...
+ ZPE is: 1264.49
+
+ Performing HCI iteration: 4
+ Basis converged after 3 iterations and contains 669 product states.
+Printing the results...
+
+Results:
+  Zero-point energy: 1264.49 (1/cm)
+  Run time: 1.00 seconds
+
+Done.
+

@@ -1,0 +1,69 @@
+
+#############################################################################
+#                                                                           #
+#              Vibrational Heat-Bath Configuration Interaction              #
+#                         By: Jonathan H. Fetherolf                         #
+#                                                                           #
+#                      Based on LOVCI by Eric G. Kratz                      #
+#                                                                           #
+#############################################################################
+
+Last modification: 22:38:05 on Oct 20 2020
+
+Reading input...
+
+No fatal errors detected.
+ And there was much rejoicing. Yay...
+
+No checkpoint filename specified. Checkpoints will not be saved.
+
+General settings:
+  CPU threads: 8
+
+  Normal modes: 12
+  Max quanta per state: 2
+  Basis functions: 91
+  Force constants: 299
+
+  Using HCI with energy cutoff: 1.000
+  Optimizing the first 70 eigenstates.
+
+Beginning Heat Bath CI procedure...
+ Initial basis size is: 91
+ Constructing Hamiltonian... Diagonalizing...
+ ZPE is: 9864.33
+
+ Performing HCI iteration: 1
+ Basis size after iteration 1 is: 9749
+ Constructing Hamiltonian...The Hamiltonian is 93.34% sparse.
+ Finding the first 70 eigenstates...
+ ZPE is: 9837.49
+
+ Performing HCI iteration: 2
+ Basis size after iteration 2 is: 22857
+ Constructing Hamiltonian...The Hamiltonian is 96.89% sparse.
+ Finding the first 70 eigenstates...
+ ZPE is: 9837.43
+
+ Performing HCI iteration: 3
+ Basis size after iteration 3 is: 28666
+ Constructing Hamiltonian...The Hamiltonian is 97.58% sparse.
+ Finding the first 70 eigenstates...
+ ZPE is: 9837.43
+
+ Performing HCI iteration: 4
+ Basis size after iteration 4 is: 29900
+ Constructing Hamiltonian...The Hamiltonian is 97.70% sparse.
+ Finding the first 70 eigenstates...
+ ZPE is: 9837.43
+
+ Performing HCI iteration: 5
+ Basis converged after 4 iterations and contains 29900 product states.
+Printing the results...
+
+Results:
+  Zero-point energy: 9837.43 (1/cm)
+  Run time: 3.05 minutes
+
+Done.
+
