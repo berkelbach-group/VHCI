@@ -2,7 +2,7 @@
 
 ***
 <div align=center> <h2>
-Heat Bath Vibrational Configuration Interaction
+Vibrational Heat-Bath Configuration Interaction
 </h2> </div>
 
 <div align=center> <h4> By: Jonathan H. Fetherolf </h4> </div>
