@@ -32,8 +32,8 @@ Headers, libraries, and data structures for VHCI
 #include <vector>
 #include <map>
 #include <unordered_set>
-#include <sys/stat.h>
 #include <algorithm>
+#include <sys/stat.h>
 #include <Eigen/Core>
 #include <Eigen/Dense>
 #include <Eigen/LU>
@@ -221,11 +221,17 @@ void QDiffVec(int, int, int&, int&, vector<int>&);
 
 void DoPT2(MatrixXd&, VectorXd&);
 
+void AddASCI(vector<WaveFunction>&, MatrixXd&, VectorXd&);
+
+void AddConnected(HashedStates&, HashedStates& NewStates, int);
+
+void Perform_ASCI(MatrixXd&, VectorXd&, const string&);
 //Function definitions 
 #include "Core_functions.cpp"
 #include "Input_Reader.cpp"
 #include "Ham.cpp"
 #include "HB.cpp"
+#include "ASCI.cpp"
 #include "PT2.cpp"
 
 #endif

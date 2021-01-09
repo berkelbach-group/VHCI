@@ -1,17 +1,17 @@
 Comment: PES obtained from Marc Odunlami used for A-VCI results in doi: 10.1063/1.4984266.  Originally from Begue et al doi: 10.1021/jp0406114.
-HCI_Eps: 0
+HCI_Eps: 0.1
 Nstate: 70
-PT2: 0
+PT2: 1
 PT2_Eps: 0
-Max_quanta: 5
+Max_quanta: 2
 Modes: 12
  0 3065.00000 10 
- 1 2297.00000 10 
- 2 1413.00000 10 
- 3 920.00000 10 
+ 1 2297.00000 10
+ 2 1413.00000 10
+ 3 920.00000 10
  4 3149.00000 10 
- 5 1487.00000 10 
- 6 1061.00000 10 
+ 5 1487.00000 10
+ 6 1061.00000 10
  7 361.00000 10 
  8 3149.00000 10 
  9 1487.00000 10 

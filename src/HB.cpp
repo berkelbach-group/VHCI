@@ -201,15 +201,25 @@ void Perform_HCI(MatrixXd& Evecs, VectorXd& Evals, const string& cpname){
         }else{ // If number of states exceeds the number selected to optimize
             N_opt = NEig;
         }
+        vector<double> Cmax; // Vector of maximum coefficients over excited states
+        // MatrixXd absEvecs = abs(Evecs);
+        for(unsigned int i=0; i<Evecs.rows(); i++){
+            double Cij = Evecs(i,0);
+            for(unsigned int j=1; j<N_opt; j++){
+                if(abs(Evecs(i,j))>abs(Cij)){
+                    Cij = Evecs(i,j);
+                }
+            }
+            Cmax.push_back(Cij);
+        }
+        //VectorXd maxVal = (Evecs.cwiseAbs()).rowwise().maxCoeff();
         HashedStates HashedBasisInit; // hashed unordered_set containing BasisSet to check for duplicates
         HashedStates HashedNewStates; // hashed unordered_set of new states that only allows unique states to be inserted
         for( WaveFunction& wfn : BasisSet){
             HashedBasisInit.insert(wfn); // Populate hashed unordered_set with initial basis states
         }
-        for( unsigned int n=0; n<N_opt; ++n){ // Loop over some set of eigenstates to optimize
-            for(unsigned int m=0; m<Evecs.rows(); ++m){ // Loop over CI coefficients and add basis states
-                AddStatesHB(HashedBasisInit, HashedNewStates,m,Evecs(m,n),HCI_Eps);
-            }
+        for(unsigned int n=0; n<Cmax.size(); ++n){ // Loop over max CI coefficients and add basis states
+            AddStatesHB(HashedBasisInit, HashedNewStates,n,Cmax[n],HCI_Eps);
         }
         if((double)HashedNewStates.size()/(double)BasisSet.size() <= 0.01){
             is_converged = 1; // Is converged in basis only grows by 1%

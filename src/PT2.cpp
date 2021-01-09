@@ -17,7 +17,6 @@ void DoPT2(MatrixXd& Evecs, VectorXd& Evals){
     if(HCI_Eps==0){
         HeatBath_Sort_FC();
     }
-    vector<WaveFunction> PTBasis; // Basis of states connected to variational space
     cout << " Finding connected states..." << endl;
     int N_opt;
     if(NEig > BasisSet.size()){ // If we don't have enough states to optimize for yet
@@ -25,15 +24,24 @@ void DoPT2(MatrixXd& Evecs, VectorXd& Evals){
     }else{ // If number of states exceeds the number selected to optimize
         N_opt = NEig;
     }
+    vector<double> Cmax; // Vector of maximum coefficients over excited states
+        // MatrixXd absEvecs = abs(Evecs);
+    for(unsigned int i=0; i<Evecs.rows(); i++){
+        double Cij = Evecs(i,0);
+        for(unsigned int j=1; j<N_opt; j++){
+            if(abs(Evecs(i,j))>abs(Cij)){
+                Cij = Evecs(i,j);
+            }
+        }
+        Cmax.push_back(Cij);
+    }
     HashedStates HashedBasisInit; // hashed unordered_set containing BasisSet to check for duplicates
     HashedStates HashedPTBasis; // hashed unordered_set of new states that only allows unique states to be inserted
     for(const WaveFunction& wfn : BasisSet){
         HashedBasisInit.insert(wfn); // Populate hashed unordered_set with initial basis states
     }
-    for(int n=0; n<N_opt; n++){ // Loop over some set of eigenstates to optimize
-        for(unsigned int m=0; m<Evecs.rows(); ++m){ // Loop over CI coefficients and add basis states
-            AddStatesHB(HashedBasisInit,HashedPTBasis,m,Evecs(m,n),PT2_Eps);
-        }
+    for(unsigned int n=0; n<Cmax.size(); n++){ // Loop over max CI coefficients and add basis states
+        AddStatesHB(HashedBasisInit,HashedPTBasis,n,Cmax[n],PT2_Eps);
     }
     int PTBasisSize = HashedPTBasis.size();
     cout << " Perturbative space contains " << PTBasisSize << " states." << endl;
